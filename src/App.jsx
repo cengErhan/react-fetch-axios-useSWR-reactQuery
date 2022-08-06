@@ -1,21 +1,20 @@
-import { useState, useEffect } from 'react'
-import './App.css'
+//import { Suspense } from 'react';
+import './App.css';
+//import Axios from './components/Axios';
+//import Fetch from './components/Fetch';
+//import Swr from './components/Swr';
+import ReactQuery from './components/ReactQuery';
+
+{/* <Suspense fallback={<h1>Data Loading ...</h1>}>
+  <Swr />
+</Suspense> */}
 
 function App() {
-  const [data, setData] = useState(null)
-
-  useEffect(()=>{
-    fetch('https://dog.ceo/api/breeds/image/random')
-      .then(resp => resp.json())
-      .then(data => setData(data.message))
-  },[])
-  
   return (
-    <div className="App">
-      <h1>hello this is fetching data tutorial</h1>
-      <img width={500} src={data} />
+    <div className='App'>
+      <ReactQuery/>
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
